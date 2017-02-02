@@ -1,4 +1,7 @@
-
+/**
+* IndexController
+* @namespace issuesApp.layout.controllers
+*/
 (function(){
   'use strict';
 
@@ -8,6 +11,9 @@
 
   IndexController.$inject = ['$scope', 'IssuesFactory', 'GithubUrlFactory'];
 
+  /**
+   * @namespace IndexController
+   */
   function IndexController($scope, IssuesFactory, GithubUrlFactory) {
     var vm = this;
 
@@ -21,6 +27,11 @@
 
     init();
 
+    /**
+     * @name init
+     * @desc resets all the variables before fetching data from github
+     * @memberOf issuesApp.layout.controllers.IndexController
+     */
     function init() {
       vm.success = false;
       vm.numTotalIssues = 0;
@@ -53,6 +64,11 @@
       getIssuesCount(1);
     });
 
+    /**
+     * @name getIssuesCount
+     * @desc fetching and parse issues from github to get required counts
+     * @memberOf issuesApp.layout.controllers.IndexController
+     */
     function getIssuesCount(page) {
       IssuesFactory.query({
         organisation: GithubUrlFactory.getRepoOrg(),
@@ -63,6 +79,10 @@
       .$promise
       .then(IssuesSuccessFn, IssuesErrorFn);
 
+      /**
+       * @name IssuesSuccessFn
+       * @desc get open issues count from the data retrieved from github
+       */
       function IssuesSuccessFn(response) {
         for (var key in response) {
           // if issue not a pull request
@@ -93,6 +113,10 @@
         }
       }
 
+      /**
+       * @name IssuesErrorFn
+       * @desc log failure to console
+       */
       function IssuesErrorFn(response) {
         console.error(response);
         vm.success = false;
