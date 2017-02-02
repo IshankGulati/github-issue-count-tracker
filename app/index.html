@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head
          content must come *after* these tags -->
-
+    <base href="/">
     <title>Issues</title>
         <!-- Bootstrap -->
 <!-- build:css styles/main.css -->
@@ -36,10 +36,17 @@
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers.js"></script>
-    <script src="scripts/services.js"></script>
 <!-- endbuild -->
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/app.config.js"></script>
+    <script src="scripts/app.routes.js"></script>
+
+    <script src="scripts/layout/layout.module.js"></script>
+    <script src="scripts/layout/controllers/header.controller.js"></script>
+    <script src="scripts/layout/controllers/index.controller.js"></script>
+    <script src="scripts/layout/services/githuburl.service.js"></script>
+    <script src="scripts/layout/services/issues.service.js"></script>
 
 </body>
 

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row row-content">
+    <div class="col-xs-12 col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Total</div>
+        <div class="panel-body">
+          {{vm.numTotalIssues}}
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Last 24 hours</div>
+        <div class="panel-body">
+          {{vm.num24hrIssues}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-content">
+    <div class="col-xs-12 col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Between 7 days and 24 hrs</div>
+        <div class="panel-body">
+          {{vm.num7dayTo24hrIssues}}
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">7 days ago</div>
+        <div class="panel-body">
+          {{vm.numAfter7dayIssues}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

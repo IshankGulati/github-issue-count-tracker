@@ -1,27 +1,19 @@
-'use strict';
+(function(){
+  'use strict';
 
-angular.module('issuesApp', ['ui.router', 'ngResource'])
-.config(function($stateProvider, $urlRouterProvider) {
-    $stateProvider
+  angular
+    .module('issuesApp', [
+      'issuesApp.routes',
+      'issuesApp.config',
+      'issuesApp.layout',
+    ]);
 
-    // route for home page
-    .state('app', {
-        url:'/',
-        views: {
-            'header' : {
-                templateUrl : 'views/header.html',
-                controller : 'HeaderController'
-            },
-            'content' : {
-                templateUrl : 'views/home.html',
-                controller : 'IndexController'
-            },
-            'footer' : {
-                templateUrl : 'views/footer.html'
-            }
-        }
-    });
+  angular
+    .module('issuesApp.routes', [
+      'ui.router'
+    ]);
 
-    // route to home page
-    $urlRouterProvider.otherwise('/');
-});
+  angular
+    .module('issuesApp.config', []);
+
+})();
